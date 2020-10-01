@@ -57,6 +57,7 @@ $Headers = @{
 }
 
 $LatestID = Get-Content latest.txt
+#$LatestID = ""
 $URI = "https://api.certspotter.com/v1/issuances?domain=" + $Domain + "&expand=id&include_subdomains=true&after=" + $LatestID + "&expand=dns_names&match_wildcards=true&expand=issuer"
 
 Get-NewDomains -LatestID $LatestID
